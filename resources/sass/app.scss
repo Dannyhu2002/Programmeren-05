@@ -1,1 +1,14 @@
-//
+@import "bootstrap";
+
+.card {
+    flex-basis: 33.333333%;
+    margin-top: 25px;
+}
+
+.card p {
+    flex-grow: 1;
+}
+
+.nav-pagination {
+    margin-top: 25px;
+}
