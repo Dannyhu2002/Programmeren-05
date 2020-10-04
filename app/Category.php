@@ -26,7 +26,7 @@ class Category extends Model
 {
     public $fillable = ['title'];
 
-    public function fooditems()
+    public function foodItems()
     {
         return $this->hasMany(FoodItem::class);
     }
