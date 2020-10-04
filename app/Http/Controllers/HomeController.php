@@ -2,15 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\FoodItem;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function show ()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $categories = Category::all();
-        return view ('food-items/home', compact ('categories'));
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
     }
 }

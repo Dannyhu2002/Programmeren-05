@@ -1,4 +1,4 @@
-@extends ('layouts.app')
+@extends ('layouts.master')
 
 @section('sidebar')
     <header class="jumbotron">
@@ -23,8 +23,12 @@
 
             <div class="row">
                 @foreach($foodItems as $foodItem)
+                    @php/** @var App\FoodItem $foodItem */ @endphp
                     <div class="col-sm card border-0">
                         <h2 class="card-title">{{$foodItem->title}}</h2>
+                        <p>
+                            {{ $foodItem->category }}
+                        </p>
                         <p class="card-text">{{$foodItem->description}}</p>
                         <img class="card-img" src="{{$foodItem->image}}" alt="{{$foodItem->title}}"/>
                         <a class="btn btn-light" href="{{route('food.show', $foodItem->id)}}">Food details</a>

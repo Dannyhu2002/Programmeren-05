@@ -15,9 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+
+route::prefix('food')->group(function() {
+    Route::get('','FoodItemcontroller@index')->name('food');
+
+    route::name('food.')->middleware('auth')->group(function (){
+        Route::get('create','FoodItemcontroller@create')->name('create');
+        Route::post('store','FoodItemcontroller@store')->name('store');
+        Route::get('{id}','FoodItemcontroller@show')->name('show');
+    });
+
 });
-Route::get('home', 'HomeController@show')->name('home');
-Route::get('food','FoodItemcontroller@index')->name('food');
-Route::get('food/create','FoodItemcontroller@create')->name('food.create');
-Route::post('food/store','FoodItemcontroller@store')->name('food.store');
-Route::get('food/{id}','FoodItemcontroller@show')->name('food.show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/categories', 'CategoryController@index')->name('categories');
