@@ -1,0 +1,145 @@
+html, body {
+    background-color: #F5F5DC;
+    color: 	#696969;
+    font-family: "Lobster", sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+h1.name {
+    text-align: center;
+    font-size: 100px;
+    color: #2F4F4F;
+}
+
+h2.head {
+    text-align: center;
+    font-size: 90px;
+    color: #2F4F4F;
+}
+
+h3.card-title {
+    text-align: center;
+    font-size: 50px;
+    color: #2F4F4F;
+    margin-bottom: 50px;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+img.card-img {
+    width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p.card-text {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+img.detail {
+    width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+
+}
+
+#link-container {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
+}
+
+#link2-container {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 100px;
+    margin-top: -10px;
+}
+
+div.form-group {
+    font-size: 30px;
+    margin-top: -10px;
+}
+
+.register {
+    position: absolute;
+    top: 80px;
+    right: 16px;
+    font-size: 40px;
+}
+
+.login {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 40px;
+}
+
+h1.log-in {
+    text-align: left;
+    font-size: 90px;
+    color: #2F4F4F;
+    margin-bottom: 70px;
+}
+
+.logout {
+    position: absolute;
+    top: 150px;
+    right: 16px;
+    font-size: 40px;
+}
+
+.card-text {
+    font-size: 70px;
+    text-align: center;
+    margin-top: 100px;
+}

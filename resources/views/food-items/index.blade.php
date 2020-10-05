@@ -2,7 +2,7 @@
 
 @section('sidebar')
     <header class="jumbotron">
-        <h1 class="name">Danny's Foodporn pagek</h1>
+        <h1 class="name">Danny's Foodporn page</h1>
     </header>
 @endsection
 
@@ -27,7 +27,7 @@
                     <div class="col-sm card border-0">
                         <h2 class="card-title">{{$foodItem->title}}</h2>
                         <p>
-                            {{ $foodItem->category }}
+                            {{ $foodItem->category->title }}
                         </p>
                         <p class="card-text">{{$foodItem->description}}</p>
                         <img class="card-img" src="{{$foodItem->image}}" alt="{{$foodItem->title}}"/>
