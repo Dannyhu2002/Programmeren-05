@@ -86,6 +86,8 @@
 
                 <div class="links">
                     <a href="{{ route('food') }}">Foodfeed</a>
+                    <a href="{{ route('categories') }}">Foodfeed Categories</a>
+                </div>
             </div>
         </div>
     </body>

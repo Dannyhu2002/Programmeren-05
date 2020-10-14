@@ -26,9 +26,13 @@
                     @php/** @var App\FoodItem $foodItem */ @endphp
                     <div class="col-sm card border-0">
                         <h2 class="card-title">{{$foodItem->title}}</h2>
-                        <p>
-                            {{ $foodItem->category->title }}
-                        </p>
+                        <h3>{{ $foodItem->category->title }}</h3>
+                        <div>
+                            <span><b>Tags: </b></span>
+                        @foreach($foodItem->tags as $tag)
+                            <span class="border border-dark btn" style="background-color: {{$tag->pivot->color}}">{{ $tag->name }}</span>
+                            @endforeach
+                        </div>
                         <p class="card-text">{{$foodItem->description}}</p>
                         <img class="card-img" src="{{$foodItem->image}}" alt="{{$foodItem->title}}"/>
                         <a class="btn btn-light" href="{{route('food.show', $foodItem->id)}}">Food details</a>

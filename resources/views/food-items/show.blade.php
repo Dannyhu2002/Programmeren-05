@@ -7,7 +7,7 @@
         @else
             <h1 class="model-title float-left">{{$error}}</h1>
         @endif
-        <a class="nav-link float-right" href="{{route('food')}}">Back to Food feed</a>
+        <a class="-link float-right" href="{{route('food')}}">Back to Food feed</a>
     </header>
 
     <div class="container">

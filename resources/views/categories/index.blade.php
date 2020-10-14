@@ -4,7 +4,7 @@
 
     <header class="jumbotron">
             <h1 class="model-title float-left">Food</h1>
-        <a class="nav-link float-right" href="{{route('food.create')}}">Add a new foodporn</a>
+        <a class="-link float-right" href="{{route('food.create')}}">Add a new foodporn</a>
     </header>
 
     <aside>
