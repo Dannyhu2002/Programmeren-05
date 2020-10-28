@@ -35,6 +35,22 @@
                         </div>
                         <p class="card-text">{{$foodItem->description}}</p>
                         <img class="card-img" src="{{$foodItem->image}}" alt="{{$foodItem->title}}"/>
+
+                        @if(auth()->user() && !auth()->user()->hasLiked($foodItem))
+                            <form action="/like" method="post">
+                                @csrf
+                                <input type="hidden" name="likeable" value="{{ get_class($foodItem) }}">
+                                <input type="hidden" name="id" value="{{ $foodItem->id }}">
+                                <button type="submit" class="like">
+                                    Like
+                                </button>
+                            </form>
+                        @else
+                            <p class="afterlike"  disabled>
+                                {{ $foodItem->likes()->count() }} likes
+                            </p>
+                        @endif
+
                         <a class="btn btn-light" href="{{route('food.show', $foodItem->id)}}">Food details</a>
                     </div>
                 @endforeach

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Contracts\Likeable;
+use App\Concerns;
 use App\Models\Tag as TagAlias;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,8 +30,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|FoodItem whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class FoodItem extends Model
+class FoodItem extends Model implements Likeable
 {
+    use Concerns\Likeable;
     public $fillable = ['title', 'description', 'image', 'category_id'];
 
     public function category()

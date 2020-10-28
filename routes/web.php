@@ -24,9 +24,14 @@ route::prefix('food')->group(function() {
         Route::get('create','FoodItemcontroller@create')->name('create');
         Route::post('store','FoodItemcontroller@store')->name('store');
         Route::get('{id}','FoodItemcontroller@show')->name('show');
+
+
     });
 
 });
+
+Route::post('like', 'LikesController@like');
+Route::delete('like', 'LikesController@dislike');
 
 Auth::routes();
 
