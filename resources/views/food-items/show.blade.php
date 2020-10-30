@@ -5,7 +5,7 @@
         @if($foodItem)
             <h1 class="model-title float-left">{{{$foodItem['title']}}}</h1>
         @else
-            <h1 class="model-title float-left">{{$error}}</h1>
+            {{--        <h1 class="modal-title float-left">{{$error}}</h1>--}}
         @endif
         <a class="-link float-right" href="{{route('food')}}">Back to Food feed</a>
     </header>

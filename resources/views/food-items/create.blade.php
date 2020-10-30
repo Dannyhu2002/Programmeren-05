@@ -2,6 +2,8 @@
 
 @section ('content')
 
+    @can('create_foodItems')
+
     <header class="jumbotron">
         <h2 class="head">Add a new foodporn</h2>
         <div id="link-container">
@@ -51,4 +53,5 @@
 
         </form>
     </div>
+    @endcan
 @endsection

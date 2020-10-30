@@ -21,10 +21,36 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    /**
+     * Register any authentication / authorization services.
+     *
+     * @return void
+     */
     public function boot()
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('create_foodItems', function($user) {
+            return $user->role_id == 1; // for admin
+        });
+
+        $this->registerPolicies();
+
+        Gate::define('like_foodItems', function($user) {
+            return $user->role_id == 2; // for users
+        });
+
+        $this->registerPolicies();
+
+        Gate::define('delete_foodItems', function($user) {
+            return $user->role_id == 1; // for admin
+        });
+
+        $this->registerPolicies();
+
+        Gate::define('edit_foodItems', function($user) {
+            return $user->role_id == 1; // for admin
+        });
+
     }
 }
