@@ -109,8 +109,10 @@ class FoodItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($food_items_id)
     {
-        //
+        $foodItem = FoodItem::where('id', $food_items_id)->first();
+        $foodItem->delete();
+        return redirect()->route('food')->with('success', 'Food Post deleted!');
     }
 }

@@ -26,7 +26,7 @@ route::prefix('food')->group(function() {
         Route::get('{id}','FoodItemcontroller@show')->name('show');
         Route::get('edit/{id}', 'FoodItemController@edit')->name('edit');
         Route::put('{id}', 'FoodItemController@update')->name('update');
-
+        Route::get('delete/{newsItem_id}', 'FoodItemController@delete')->name('delete');
     });
 
 });
