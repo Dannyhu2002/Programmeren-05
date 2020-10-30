@@ -24,7 +24,8 @@ route::prefix('food')->group(function() {
         Route::get('create','FoodItemcontroller@create')->name('create');
         Route::post('store','FoodItemcontroller@store')->name('store');
         Route::get('{id}','FoodItemcontroller@show')->name('show');
-
+        Route::get('edit/{id}', 'FoodItemController@edit')->name('edit');
+        Route::put('{id}', 'FoodItemController@update')->name('update');
 
     });
 

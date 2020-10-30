@@ -52,6 +52,11 @@
                         @endif
 
                         <a class="btn btn-light" href="{{route('food.show', $foodItem->id)}}">Food details</a>
+                        @can('edit_foodItems')
+                            <div id="link4-container">
+                                <a href="{{route('food.edit', $foodItem->id)}}"  style="color:red;">Edit</a>
+                            </div>
+                        @endcan
                     </div>
                 @endforeach
             </div>

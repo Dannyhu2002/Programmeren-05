@@ -80,7 +80,13 @@ class FoodItemController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoriesMenu = Category::all();
+
+        // get the newsItem
+        $data = FoodItem::find($id);
+
+        // show the edit form
+        return view('food-items.edit', compact('data', 'categoriesMenu'));
     }
 
     /**
@@ -92,7 +98,9 @@ class FoodItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = FoodItem::find($id);
+        $data->update($request->all());
+        return redirect()->route('food', compact('data'))->with('success', 'Food Post updated!');
     }
 
     /**
