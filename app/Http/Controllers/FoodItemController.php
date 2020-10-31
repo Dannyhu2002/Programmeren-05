@@ -115,4 +115,32 @@ class FoodItemController extends Controller
         $foodItem->delete();
         return redirect()->route('food')->with('success', 'Food Post deleted!');
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $categoriesMenu = Category::all();
+        $categories = Category::where('title', 'like', '%' . $search . '%')->get();
+        return view('food-items/index', ['categories' => $categories, 'categoriesMenu' => $categoriesMenu]);
+    }
+
+    public function toggle(Request $request, $id)
+    {
+        $color_status = $request->input('color_status');
+        $foodItem = FoodItem::find($id);
+        if (isset($color_status)) {
+            // available item
+            $foodItem->color_status = 1;
+            $foodItem->save();
+            return redirect('food')->with('success', 'Changed to color');
+        } else {
+            // not available item
+            $foodItem->color_status = 0;
+            $foodItem->save();
+            return redirect('food')->with('success', 'Changed to black & grey');
+        }
+
+
+    }
 }
+

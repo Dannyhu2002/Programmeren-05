@@ -25,6 +25,8 @@ route::prefix('food')->group(function() {
         Route::get('edit/{id}', 'FoodItemController@edit')->name('food.edit')->middleware('auth');
         Route::put('{id}', 'FoodItemController@update')->name('food.update');
         Route::get('delete/{foodItem_id}', 'FoodItemController@delete')->name('food.delete')->middleware('auth');
+        Route::post('toggle/{id}','FoodItemController@toggle')->name('food.toggle');
+        Route::get('search', 'FoodItemController@search')->name('food.search');
 
 });
 

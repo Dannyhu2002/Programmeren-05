@@ -52,5 +52,11 @@ class AuthServiceProvider extends ServiceProvider
             return $user->role_id == 1; // for admin
         });
 
+        $this->registerPolicies();
+
+        Gate::define('toggle_foodItems', function($user) {
+            return $user->role_id == 1; // for admin
+        });
+
     }
 }
