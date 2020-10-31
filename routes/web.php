@@ -24,7 +24,7 @@ route::prefix('food')->group(function() {
         Route::get('{id}','FoodItemcontroller@show')->name('food.show');
         Route::get('edit/{id}', 'FoodItemController@edit')->name('food.edit')->middleware('auth');
         Route::put('{id}', 'FoodItemController@update')->name('food.update');
-        Route::get('delete/{newsItem_id}', 'FoodItemController@delete')->name('food.delete')->middleware('auth');
+        Route::get('delete/{foodItem_id}', 'FoodItemController@delete')->name('food.delete')->middleware('auth');
 
 });
 

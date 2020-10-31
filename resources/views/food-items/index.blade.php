@@ -10,7 +10,7 @@
     <header class="jumbotron">
         <h2 class="head">Food feed</h2>
         <div id="link-container">
-            @can('create_newsItems')
+            @can('create_foodItems')
             <a href="{{route('food.create')}}">Add a new foodporn</a>
             @endcan
         </div>
