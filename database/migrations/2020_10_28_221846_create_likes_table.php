@@ -18,10 +18,7 @@ class CreateLikesTable extends Migration
             $table->foreignId('user_id');
             $table->morphs('likeable');
             $table->timestamps();
-
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -1,30 +1,10 @@
 html, body {
-    background-color: #F5F5DC;
-    color: 	#696969;
-    font-family: "Lobster", sans-serif;
-    font-size: 20px;
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
     font-weight: 200;
     height: 100vh;
     margin: 0;
-}
-
-h1.name {
-    text-align: center;
-    font-size: 100px;
-    color: #2F4F4F;
-}
-
-h2.head {
-    text-align: center;
-    font-size: 90px;
-    color: #2F4F4F;
-}
-
-h3.card-title {
-    text-align: center;
-    font-size: 50px;
-    color: #2F4F4F;
-    margin-bottom: 50px;
 }
 
 .full-height {
@@ -65,7 +45,6 @@ h3.card-title {
     text-transform: uppercase;
 }
 
-
 .m-b-md {
     margin-bottom: 30px;
 }
@@ -86,9 +65,9 @@ p.card-text {
 img.detail {
     width: 500px;
     display: block;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
 
 }
 
@@ -96,30 +75,9 @@ img.detail {
     margin-top: 50px;
     text-align: center;
     font-size: 40px;
+    color: black;
 }
 
-#link2-container {
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 100px;
-    margin-top: -10px;
-}
-
-#link3-container {
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 100px;
-    margin-top: -95px;
-    margin-left: -100px;
-}
-
-#link4-container {
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 100px;
-    margin-top: -135px;
-    margin-left:110px;
-}
 
 div.form-group {
     font-size: 30px;
@@ -134,30 +92,30 @@ div.form-group {
 }
 
 .login {
-    position: absolute;
-    top: 8px;
-    right: 16px;
+    top: 10px;
+    right: 20px;
     font-size: 40px;
+    position: absolute;
 }
 
 h1.log-in {
-    text-align: left;
     font-size: 90px;
-    color: #2F4F4F;
+    color:black;
+    text-align: left;
     margin-bottom: 70px;
 }
 
 .logout {
-    position: absolute;
-    top: 150px;
-    right: 16px;
     font-size: 40px;
+    right: 16px;
+    top: 150px;
+    position: absolute;
 }
 
 .card-text {
-    font-size: 70px;
-    text-align: center;
     margin-top: 100px;
+    text-align: center;
+    font-size: 70px;
 }
 
 .backbutton{
@@ -165,94 +123,17 @@ h1.log-in {
 }
 
 .like {
-    margin-left: 538px;
-    font-size: 30px;
-    color: green;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-left: 540px;
+    font-size: 40px;
+    color: blue;
 }
 
 
-.afterlike {
-    font-size: 30px;
+.liked {
+    color:blue;
+    font-size: 40px;
     text-align: center;
-    color:green;
 
 }
 
-.search-title {
-    font-size: 30px;
-    margin-left: 450px;
-    margin-top: 40px;
-}
-
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-/* The slider */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: #2196F3;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-.togglebutton{
-    margin-left: 515px;
-    margin-top: -90px;
-}
-
-.colorstatus {
-    margin-left: 35px;
-}

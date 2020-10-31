@@ -16,21 +16,6 @@
         </div>
     </header>
 
-    <h5 class="search-title">Search Bar</h5>
-    <div class="col-md-5" style="margin-left: 300px;">
-        <form method="get" action="{{route('food.search')}}">
-            <div class="input-group">
-                <input type="search" name="search" class="form-control" >
-                <span class="input-group-btn" >
-            <button type="submit" class="btn btn-primary" style="font-size: 20px;">Search</button>
-                </span>
-            </div>
-        </form>
-    </div>
-
-    </br>
-    </br>
-
     <div class="container">
         @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">
@@ -58,48 +43,22 @@
                                 @csrf
                                 <input type="hidden" name="likeable" value="{{ get_class($foodItem) }}">
                                 <input type="hidden" name="id" value="{{ $foodItem->id }}">
-                                <button type="submit" class="like">
-                                    Like
-                                </button>
+                                <button type="submit" class="like">Like Button</button>
                             </form>
                         @else
-                            <p class="afterlike"  disabled>
-                                {{ $foodItem->likes()->count() }} likes
-                            </p>
+                            <p class="liked"  disabled>{{ $foodItem->likes()->count() }} likes</p>
                         @endif
-
                         <a class="btn btn-light" href="{{route('food.show', $foodItem->id)}}">Food details</a>
-                        @can('delete_foodItems')
-                            <div id="link3-container">
-                                <a href="{{route('food.delete', ['foodItem_id'=>$foodItem->id])}}" style="color:red;">Delete</a>
-                            </div>
-                        @endcan
-
                         @can('edit_foodItems')
-                            <div id="link4-container">
-                                <a href="{{route('food.edit', $foodItem->id)}}"  style="color:red;">Edit</a>
+                            <div id="link-container">
+                                <a href="{{route('food.edit', $foodItem->id)}}" >Edit Food Post</a>
                             </div>
                         @endcan
-                        <div class="togglebutton">
-                            @if ($foodItem->color_status == 1)
-                                <p class="colorstatus">Color</p>
-                            @else
-                                <p>Black & Grey</p>
-                            @endif
-                            @can('toggle_foodItems')
-                                <form method="post" action="{{route('food.toggle',$foodItem->id)}}" id='toggleform'>
-                                    @csrf
-                                    <div class="form-group row" style="margin-left: 20px;">
-                                        <label class="switch ml-3">
-                                            <input name="color_status" id="color_status" value="1" type="checkbox" onclick="submit()" @if($foodItem->color_status == 1) checked @endif>
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                </form>
-                            @endcan
-                        </div>
-
-
+                        @can('delete_foodItems')
+                            <div id="link-container">
+                                <a href="{{route('food.delete', ['foodItem_id'=>$foodItem->id])}}">Delete Food Post</a>
+                            </div>
+                        @endcan
                     </div>
                 @endforeach
             </div>

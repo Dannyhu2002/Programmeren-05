@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\FoodItem;
-use App\NewsItem;
 use Illuminate\Http\Request;
 
 class FoodItemController extends Controller
@@ -53,7 +53,7 @@ class FoodItemController extends Controller
         $foodItem->image = $request->get('image');
 
         $foodItem->save();
-        return redirect('food')->with('success','Bericht is opgeslagen!');
+        return redirect('food')->with('success','Message is saved!');
     }
 
     /**
@@ -66,7 +66,7 @@ class FoodItemController extends Controller
     {
         $foodItem = FoodItem::find($id);
         if($foodItem === null) {
-            abort(404, "Dit food-item is helaas niet gevonden");
+            abort(404, "This food-item is unfortunately unavailable");
         }
 
         return view('food-items.show', compact('foodItem'));
@@ -80,13 +80,9 @@ class FoodItemController extends Controller
      */
     public function edit($id)
     {
-        $categoriesMenu = Category::all();
-
-        // get the newsItem
         $data = FoodItem::find($id);
 
-        // show the edit form
-        return view('food-items.edit', compact('data', 'categoriesMenu'));
+        return view('food-items.edit', compact('data'));
     }
 
     /**
@@ -114,33 +110,6 @@ class FoodItemController extends Controller
         $foodItem = FoodItem::where('id', $food_items_id)->first();
         $foodItem->delete();
         return redirect()->route('food')->with('success', 'Food Post deleted!');
-    }
-
-    public function search(Request $request)
-    {
-        $search = $request->get('search');
-        $categoriesMenu = Category::all();
-        $categories = Category::where('title', 'like', '%' . $search . '%')->get();
-        return view('food-items/index', ['categories' => $categories, 'categoriesMenu' => $categoriesMenu]);
-    }
-
-    public function toggle(Request $request, $id)
-    {
-        $color_status = $request->input('color_status');
-        $foodItem = FoodItem::find($id);
-        if (isset($color_status)) {
-            // available item
-            $foodItem->color_status = 1;
-            $foodItem->save();
-            return redirect('food')->with('success', 'Changed to color');
-        } else {
-            // not available item
-            $foodItem->color_status = 0;
-            $foodItem->save();
-            return redirect('food')->with('success', 'Changed to black & grey');
-        }
-
-
     }
 }
 

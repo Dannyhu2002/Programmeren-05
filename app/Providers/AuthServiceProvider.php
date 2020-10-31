@@ -31,31 +31,25 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('create_foodItems', function($user) {
-            return $user->role_id == 1; // for admin
-        });
-
-        $this->registerPolicies();
-
-        Gate::define('like_foodItems', function($user) {
-            return $user->role_id == 2; // for users
-        });
-
-        $this->registerPolicies();
-
-        Gate::define('delete_foodItems', function($user) {
-            return $user->role_id == 1; // for admin
+            return $user->authroles_id == 5;
         });
 
         $this->registerPolicies();
 
         Gate::define('edit_foodItems', function($user) {
-            return $user->role_id == 1; // for admin
+            return $user->authroles_id == 5;
         });
 
         $this->registerPolicies();
 
-        Gate::define('toggle_foodItems', function($user) {
-            return $user->role_id == 1; // for admin
+        Gate::define('delete_foodItems', function($user) {
+            return $user->authroles_id == 5;
+        });
+
+        $this->registerPolicies();
+
+        Gate::define('like_foodItems', function($user) {
+            return $user->authroles_id == 6;
         });
 
     }
