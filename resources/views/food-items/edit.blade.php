@@ -18,7 +18,7 @@
                 <label for="description">Description</label>
                 <input type="text" name="description" id="description" class="form-control" value="{{$data->description}}" />
 
-                <label for="image">Image</label>
+                <label for="image">Image url</label>
                 <input type="text" name="image" id="image" class="form-control" value="{{$data->image}}" />
             </div>
             <div class="form-group" style="padding-bottom: 15px">

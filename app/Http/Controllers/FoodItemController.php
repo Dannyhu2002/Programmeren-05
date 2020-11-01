@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Comment;
 use App\FoodItem;
 use Illuminate\Http\Request;
 
@@ -53,7 +52,7 @@ class FoodItemController extends Controller
         $foodItem->image = $request->get('image');
 
         $foodItem->save();
-        return redirect('food')->with('success','Message is saved!');
+        return redirect('food')->with('success','Food Post is saved!');
     }
 
     /**

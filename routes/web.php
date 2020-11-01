@@ -29,6 +29,9 @@ route::prefix('food')->group(function() {
 
 Route::post('like', 'LikesController@like');
 Route::delete('like', 'LikesController@dislike');
+Route::resource('/comments','CommentsController');
+Route::resource('/replies','RepliesController');
+Route::post('/replies/ajaxDelete','RepliesController@ajaxDelete');
 
 Auth::routes();
 
