@@ -12,4 +12,11 @@ class CategoryController extends Controller
 
         return view('categories.index', compact('categories'));
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');;
+        $categories = Category::where('title', 'like', '%' . $search . '%')->get();
+        return view('categories.index', ['categories' => $categories]);
+    }
 }

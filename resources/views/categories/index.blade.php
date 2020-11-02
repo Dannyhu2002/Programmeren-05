@@ -7,6 +7,19 @@
         <a class="-link float-right" href="{{route('food.create')}}">Add a new foodporn</a>
     </header>
 
+    <h5 class="search-title">Search Bar</h5>
+    <div class="col-md-5" style="margin-left: 300px;">
+        <form method="get" action="{{route('categories.search')}}">
+            <div class="input-group">
+                <input type="search" name="search" class="form-control" >
+                <span class="input-group-btn" >
+            <button type="submit" class="btn btn-primary" style="font-size: 20px;">Search</button>
+                </span>
+            </div>
+        </form>
+    </div>
+
+
     <aside>
         <ul>
             @foreach($categories as $category)
