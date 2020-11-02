@@ -55,7 +55,9 @@
                         <span> {{ $comment->comment }} </span>
                         <div style="margin-left:10px;">
                             <a style="cursor: pointer;" cid="{{ $comment->id }}" name_a="{{ Auth::user()->name }}" token="{{ csrf_token() }}" class="reply">Reply</a>&nbsp;
+                            @can('deletecomment_foodItems')
                             <a style="cursor: pointer;"  class="delete-comment" token="{{ csrf_token() }}" comment-did="{{ $comment->id }}" >Delete</a>
+                            @endcan
                             <div class="reply-form">
 
                                 <!-- Dynamic Reply form -->
@@ -67,7 +69,10 @@
                                         <i><b> {{ $rep->name }} </b></i>&nbsp;&nbsp;
                                         <span> {{ $rep->reply }} </span>
                                         <div style="margin-left:10px;">
-                                            <a rname="{{ Auth::user()->name }}" rid="{{ $comment->id }}" style="cursor: pointer;" class="reply-to-reply" token="{{ csrf_token() }}">Reply</a>&nbsp;<a did="{{ $rep->id }}" class="delete-reply" token="{{ csrf_token() }}" >Delete</a>
+                                            <a rname="{{ Auth::user()->name }}" rid="{{ $comment->id }}" style="cursor: pointer;" class="reply-to-reply" token="{{ csrf_token() }}">Reply</a>&nbsp;
+                                                @can('deletereply_foodItems')
+                                                <a did="{{ $rep->id }}" class="delete-reply" token="{{ csrf_token() }}" >Delete</a>
+                                            @endcan
                                         </div>
                                         <div class="reply-to-reply-form">
 

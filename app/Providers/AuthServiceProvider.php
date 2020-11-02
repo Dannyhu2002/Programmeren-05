@@ -52,5 +52,18 @@ class AuthServiceProvider extends ServiceProvider
             return $user->authroles_id == 6;
         });
 
+        $this->registerPolicies();
+
+        Gate::define('deletecomment_foodItems', function($user) {
+            return $user->authroles_id == 5;
+        });
+
+        $this->registerPolicies();
+
+        Gate::define('deletereply_foodItems', function($user) {
+            return $user->authroles_id == 5;
+        });
+
+
     }
 }
